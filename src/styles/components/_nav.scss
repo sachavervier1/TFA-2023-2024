@@ -1,0 +1,128 @@
+@media(max-width:1279px) {
+
+    .topnav__burger {
+        z-index: 1000;
+        cursor: pointer;
+        position: absolute;
+        border: none;
+        background-color: transparent;
+        right: 7%;
+        top: 3.5%;
+        padding: 0;
+    }
+
+    .logo {
+        display: none;
+    }
+
+    a {
+        text-decoration: none;
+        color: black;
+    }
+
+    .topnav__liste {
+        margin: 0;
+        padding: 0;
+        z-index: 99;
+        position: fixed;
+        top: 0;
+        left: 100%;
+        width: 100%;
+        height: 100%;
+        transition: all .6s cubic-bezier(1, .19, .02, .99);
+        transform: translateY(0);
+        display: inline-block;
+        list-style: none;
+
+        background-color: #EFDEDA;
+
+    }
+
+    .topnav__el {
+        font-family: "museo-sans", sans-serif;
+        font-size: 18px;
+        line-height: 29px;
+        font-weight: 100;
+        font-style: normal;
+        padding: 60px 0px;
+        text-align: center;
+        margin-right: 15%;
+        transform: translateY(0%);
+        opacity: 0;
+        transition: all .6s cubic-bezier(1, .19, .02, .99);
+    }
+
+    .topnav--open .topnav__liste {
+        transform: translateX(-80%);
+    }
+
+    .topnav--open .topnav__el {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    .topnav--open .topnav__el:nth-child(1) {
+        padding-top: 150px;
+        transition-delay: 0.5s;
+    }
+
+    .topnav--open .topnav__el:nth-child(2) {
+        transition-delay: 0.7s;
+    }
+
+    .topnav--open .topnav__el:nth-child(3) {
+        transition-delay: 0.9s;
+    }
+}
+
+@media(min-width: 1280px) {
+
+    .topnav__burger {
+        display: none;
+    }
+
+    a {
+        text-decoration: none;
+        color: white;
+    }
+
+    li {
+        list-style: none;
+    }
+
+    .topnav__liste,
+    .nav2 {
+        display: flex;
+    }
+
+    .topnav__liste {
+        align-items: center;
+        justify-content: space-between;
+        padding: 46px 0px 0px;
+        margin: 0px 35px 46px;
+
+    }
+
+    .topnav__el {
+        padding-left: 70px;
+        text-transform: uppercase;
+        font-size: 13px;
+        font-weight: 500;
+        line-height: 16px;
+        letter-spacing: 0.2em;
+    }
+
+    .logo {
+        font-weight: 600;
+        font-style: italic;
+        letter-spacing: -0.24em;
+        color: #ffa800;
+
+    }
+
+
+
+
+
+
+}
