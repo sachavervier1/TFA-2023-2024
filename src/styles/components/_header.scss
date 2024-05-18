@@ -26,6 +26,7 @@
     .section__header {
         display: flex;
         align-items: center;
+        margin-top: 121px;
     }
 
     .presentation {
@@ -75,5 +76,6 @@
     .active {
         border-bottom: 1px solid #ffa800;
     }
+
 
 }

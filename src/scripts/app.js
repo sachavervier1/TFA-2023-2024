@@ -24,8 +24,27 @@ menuburger.addEventListener("click", function () {
 });
 
 menuburgeroff.addEventListener("click", function () {
-    menu.classList.remove("topnav--open")
+    menu.classList.remove("topnav--open");
 });
+
+const logohover = document.querySelector(".logo");
+const logoff = document.querySelector(".logos");
+const logoff2 = document.querySelector(".logos2");
+logohover.addEventListener('mouseover', event => {
+    logoff.classList.remove("logo--off");
+    logohover.classList.add("logo--modifier");
+    logoff2.classList.remove("logo--off");
+
+});
+logohover.addEventListener('mouseout', event => {
+    logoff.classList.add("logo--off");
+    logoff2.classList.add("logo--off");
+    logohover.classList.remove("logo--modifier");
+});
+
+
+
+
 
 
 

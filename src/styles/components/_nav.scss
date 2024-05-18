@@ -77,6 +77,12 @@
 
 @media(min-width: 1280px) {
 
+    nav {
+        position: fixed;
+        width: 100%;
+        z-index: 10;
+    }
+
     .topnav__burger {
         display: none;
     }
@@ -110,6 +116,10 @@
         font-weight: 500;
         line-height: 16px;
         letter-spacing: 0.2em;
+
+        :hover {
+            color: #ffa800;
+        }
     }
 
     .logo {
@@ -117,6 +127,15 @@
         font-style: italic;
         letter-spacing: -0.24em;
         color: #ffa800;
+        transition: all .2s cubic-bezier(0, 0, .75, 1);
+
+        &--off {
+            display: none;
+        }
+
+        &--modifier {
+            letter-spacing: 0.2em;
+        }
 
     }
 
