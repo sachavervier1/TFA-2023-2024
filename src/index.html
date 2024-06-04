@@ -58,20 +58,20 @@
       </button>
 
       <ul class="topnav__liste">
-        <div>
 
-          <li><a class="logo" href="#t1">S<span class="logos logo--off">acha </span>V<span class="logos2 logo--off">ervier</span></a></li>
 
-        </div>
-        <div class="nav2">
+        <li><a class="logo" href="#t1">S<span class="logos logo--off">acha </span>V<span class="logos2 logo--off">ervier</span></a></li>
 
-          <li class="topnav__el"><a href="#t1">Accueil</a></li>
 
-          <li class="topnav__el"><a href="#t2">Mes projets</a></li>
+        <li>
+          <ul class="nav2">
+            <li class="topnav__el"><a href="#t1">Accueil</a></li>
 
-          <li class="topnav__el"><a href="#t3">A Propos</a></li>
+            <li class="topnav__el"><a href="#t2">Mes projets</a></li>
 
-        </div>
+            <li class="topnav__el"><a href="#t3">A Propos</a></li>
+          </ul>
+        </li>
       </ul>
 
     </nav>
@@ -92,30 +92,156 @@
 
     <div class="nomprenom">Sacha Vervier</div>
 
-    <a class="buttonarrow" href="#t2"><svg width="48" height="10" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path transform="matrix(.94868 .31623 -.44706 .8945 0 2)" stroke="#FFA800" stroke-width="1.5" d="M0-1h25" />
-        <path transform="matrix(.94868 -.31623 .44706 .8945 24 10)" stroke="#FFA800" stroke-width="1.5" d="M0-1h25" />
+    <a class="buttonarrow" href="#t2"><svg width="66" height="39" viewBox="0 0 66 39" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <line y1="-0.75" x2="25.2982" y2="-0.75" transform="matrix(0.948683 0.316228 -0.447065 0.894502 9 16)" stroke="#FFA800" stroke-width="1.5" />
+        <line y1="-0.75" x2="25.2982" y2="-0.75" transform="matrix(0.948683 -0.316228 0.447065 0.894502 33 24)" stroke="#FFA800" stroke-width="1.5" />
       </svg>
-
     </a>
 
   </header>
 
   <main>
-
     <section id="t2" class="sectionprojets">
-      <h2 class="pintrue">Mes Projets</h2>
+      <div class="pinactif">
+        <div class="border1"></div>
+        <h2 class="pintrue">Mes Projets</h2>
+        <div class="border2"></div>
+        <svg class="corner" width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <line x1="1.10742" y1="18" x2="1.10742" y2="3.27834e-08" stroke="#FFA800" stroke-width="1.5" />
+          <line x1="1" y1="17.25" x2="19" y2="17.25" stroke="#FFA800" stroke-width="1.5" />
+        </svg>
+      </div>
     </section>
 
-    <section class="sectionphotos">
+    <section>
+      <div class="sectionphotos">
 
-      <img class="p1" src="" alt="projet 1">
-      <img class="p2" src="" alt="projet 2">
-      <img class="p3" src="" alt="projet 3">
-      <img class="p4" src="" alt="projet 4">
-      <img class="p5 pinfalse" src="" alt="projet 5">
+
+        <a href="#sectionHW" class="projetlien p1 reveal fade-bottom">
+          <img src="assets/images/HWX1.png" alt="photo du projet 'Hello World'" srcset="assets/images/HWX2.png 2x">
+        </a>
+
+        <section class="presentationprojet projetHW visible" id="sectionHW">
+          <div class="backgroundlight"></div>
+          <button class="buttonprojet"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <line x1="0.646447" y1="13.6464" x2="13.3744" y2="0.918525" stroke="white" />
+              <line x1="13.6464" y1="13.6436" x2="0.918525" y2="0.915671" stroke="white" />
+            </svg>
+          </button>
+
+          <div class="borderprojet">
+            <h3>Hello World <span>_</span></h3>
+            <div class="flexpresentation">
+              <div>
+                <p>Bienvenue dans la section dédiée à mon tout premier projet, "Hello World". Ce projet marque le début de mon parcours dans le développement web.</p>
+                <p>L'objectif de ce projet était de créer une base en HTML, CSS et JavaScript, tout en apprenant les principes de base du développement web. "Hello World" a été conçu comme une introduction simple aux techniques de création de sites web.</p>
+              </div>
+              <img src="assets/images/HWX1.png" alt="image de presentation du site Hello World" srcset="assets/images/HWX2.png 2x">
+            </div>
+            <a class="linkprojet" href="sacha-vervier.be/projets/HelloWorld">Visiter le site</a>
+          </div>
+
+        </section>
+
+
+        <a href="#sectionIolce" class="projetlien p2 reveal fade-bottom">
+          <img src="assets/images/IolceX1.png" alt="photo du projet 'Iolce'" srcset="assets/images/IolceX2.png 2x">
+        </a>
+
+        <section class="presentationprojet projetIolce visible" id="sectionIolce">
+          <div class="backgroundlight"></div>
+          <button class="buttonprojet"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <line x1="0.646447" y1="13.6464" x2="13.3744" y2="0.918525" stroke="white" />
+              <line x1="13.6464" y1="13.6436" x2="0.918525" y2="0.915671" stroke="white" />
+            </svg>
+          </button>
+
+          <div class="borderprojet">
+            <h3>Iolce <span>_</span></h3>
+            <div class="flexpresentation">
+              <div>
+                <p>Cette section est dédiée à mon deuxième projet, "Iolce". Ce projet a été une étape importante dans l'approfondissement de mes compétences en matière de mise en page et d'organisation de contenu sur le web.</p>
+                <p>L'objectif de "Iolce" était de choisir et présenter une conférence via un site web. Ce projet m'a permis de mieux comprendre comment structurer des pages web de manière claire et efficace.</p>
+              </div>
+              <img src="assets/images/IolceX1.png" alt="image de presentation du site Iolce" srcset="assets/images/IolceX2.png 2x">
+            </div>
+            <a class="linkprojet" href="sacha-vervier.be/projets/Iolce">Visiter le site</a>
+          </div>
+
+        </section>
+
+
+        <a href="#sectionDP" class="p3 projetlien reveal fade-bottom">
+          <img src="assets/images/DPX1.png" alt="photo du projet 'Data Play'" srcset="assets/images/DPX2.png 2x">
+        </a>
+
+        <section class="presentationprojet projetDP visible" id="sectionDP">
+          <div class="backgroundlight"></div>
+          <button class="buttonprojet"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <line x1="0.646447" y1="13.6464" x2="13.3744" y2="0.918525" stroke="white" />
+              <line x1="13.6464" y1="13.6436" x2="0.918525" y2="0.915671" stroke="white" />
+            </svg>
+          </button>
+
+          <div class="borderprojet">
+            <h3>Data Play <span>_</span></h3>
+            <div class="flexpresentation">
+              <div>
+                <p>Cette section est dédiée à un projet un peu spécial,'Data Play'. C'était un projet de groupe où l'on avait environ 3 semaine pour créer une sorte de jeu.</p>
+                <p>Le but de ce projet était d'approfondir nos connaissances dans le domaine du code tout en apprenant à travailler dans un délai imparti et plutôt court.</p>
+              </div>
+              <img src="assets/images/DPX1.png" alt="image de presentation du site Iolce" srcset="assets/images/DPX2.png 2x">
+            </div>
+            <a class="linkprojet" href="sacha-vervier.be/projets/Iolce">Visiter le site</a>
+          </div>
+
+        </section>
+
+        <a href="#sectionTFA" class="p4 projetlien reveal fade-bottom pinfalse">
+          <img src="assets/images/TFAX1.png" alt="photo de mon TFA 2022-2023" srcset="assets/images/TFAX2.png 2x">
+        </a>
+        <section class="presentationprojet projetTFA visible" id="sectionTFA">
+          <div class="backgroundlight"></div>
+          <button class="buttonprojet"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <line x1="0.646447" y1="13.6464" x2="13.3744" y2="0.918525" stroke="white" />
+              <line x1="13.6464" y1="13.6436" x2="0.918525" y2="0.915671" stroke="white" />
+            </svg>
+          </button>
+          <div class="borderprojet">
+            <h3>TFA 2023 <span>_</span></h3>
+            <div class="flexpresentation">
+              <div>
+                <p>Cette section est dédiée à mon dernier projet de l'année 2023 (TFA), 'Easy License For Free'. Ce projet avait pour objectif d'identifier une problématique, de formuler une hypothèse, et de proposer une solution viable pour la résoudre.</p>
+                <p>Le but de ce projet était de développer une méthodologie pour aborder une problématique réelle, en passant par toutes les étapes de la réflexion et de la conception de solutions. </p>
+              </div>
+              <img src="assets/images/TFAX1.png" alt="image de presentation du site Iolce" srcset="assets/images/TFAX2.png 2x">
+            </div>
+            <a class="linkprojet" href="sacha-vervier.be/projets/Iolce">Visiter le site</a>
+          </div>
+        </section>
+      </div>
+    </section>
+
+
+
+    <section id="t3" class="sectionapropos">
+      <div class="border3"></div>
+      <h2>À Mon Sujet</h2>
+      <div class="border4"></div>
+    </section>
+
+    <section class="taquinjeu">
+      <div id="chrono">00:00:00</div>
+      <div id="taquin"></div>
+      <div id="completionMessage" class="hidden">Félicitations, vous avez complété le puzzle!</div>
 
     </section>
+
+
+
+
+
+
 
   </main>
 

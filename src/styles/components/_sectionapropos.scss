@@ -1,0 +1,72 @@
+.sectionapropos {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    overflow-x: hidden;
+    position: relative;
+}
+
+
+.border3 {
+    border-top: 1px solid #ffa800;
+    width: 800px;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+
+.border4 {
+    border-top: 1px solid #ffa800;
+    width: 800px;
+    position: absolute;
+    top: 73%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+
+
+.taquinjeu {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    flex-direction: column;
+}
+
+#taquin {
+    display: grid;
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: repeat(4, 100px);
+    gap: 1px;
+}
+
+.piece {
+    width: 100px;
+    height: 100px;
+    background-size: 400px 400px;
+    /* Ajuste pour correspondre à la taille totale de l'image */
+    cursor: pointer;
+    border: 1px solid #ccc;
+}
+
+#chrono {
+    margin-top: 20px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+#completionMessage {
+    margin-top: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    color: green;
+}
+
+.hidden {
+    display: none;
+}

@@ -1,9 +1,42 @@
 @media(min-width:1280px) {
+
     .sectionprojets {
-        z-index: -1;
-        display: flex;
-        justify-content: center;
         height: 100vh;
     }
+
+    .pinactif {
+        display: flex;
+        justify-content: center;
+        height: 100%;
+
+    }
+
+
+    .border1 {
+        border-top: 1px solid #ffa800;
+        width: 800px;
+        position: absolute;
+        top: 30%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+    }
+
+    .border2 {
+        border-top: 1px solid #ffa800;
+        width: 800px;
+        position: absolute;
+        top: 73%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+    }
+
+    .corner {
+        position: absolute;
+        bottom: 3%;
+        left: 2%;
+    }
+
 
 }

@@ -5,10 +5,13 @@
 @import 'components/header';
 @import 'components/sectionprojet';
 @import 'components/sectionphoto';
+@import 'components/sectionapropos';
+@import 'components/presentationprojets';
 
 html {
     scroll-behavior: smooth;
 }
+
 
 body {
     overflow-x: hidden;
@@ -23,6 +26,11 @@ body {
     font-weight: 400;
     font-style: normal;
 
+
+}
+
+.noscroll {
+    overflow: hidden;
 }
 
 h1 {
@@ -38,12 +46,23 @@ h1 {
 }
 
 h2 {
-    font-weight: 500;
+    font-weight: 550;
     font-style: italic;
     font-size: 220px;
-    margin: 0;
     display: flex;
     align-items: center;
+}
+
+h3 {
+    font-size: 170px;
+    font-weight: 600;
+    margin: 0;
+    line-height: 170px;
+    margin-bottom: 60px;
+
+    span {
+        color: #ffa800;
+    }
 }
 
 p {
