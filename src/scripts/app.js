@@ -5,17 +5,32 @@ import ScrollTrigger from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 
-gsap.to('.pintrue, .border1, .border2, .corner', {
+gsap.to('.pintrue, .border1, .border2', {
     scrollTrigger: {
-        trigger: ".pinactif", // Déclencheur pour la section projets
-        start: "top top",           // Commence quand le haut de .sectionprojets atteint le haut de la fenêtre
-        scrub: true,                // Animation fluide au défilement
-        endTrigger: ".sectionphotos", // Fin de l'animation à la section photos
-        end: 'bottom top',          // Fin quand le bas de .sectionprojets atteint le haut de la fenêtre
-        pin: true,                  // Pin la section pendant le défilement
+        trigger: ".pinactif",
+        start: "top top",
+        scrub: true,
+        endTrigger: ".sectionphotos",
+        end: '150% top',
+        pin: true,
         markers: true,
     }
 });
+
+gsap.to('.border1, .border2', {
+    scaleX: 0,
+    scrollTrigger: {
+        trigger: ".sectionphotos",
+        start: "bottom top",
+        scrub: true,
+        endTrigger: '.sectionapropos',
+        end: 'top bottom',
+        markers: true,
+    }
+});
+
+
+
 
 
 
@@ -68,43 +83,12 @@ logohover.addEventListener('mouseout', event => {
     logohover.classList.remove("logo--modifier");
 });
 
-document.addEventListener('DOMContentLoaded', function () {
-    const noscroll = document.querySelector('body');
-    const links = document.querySelectorAll('.projetlien');
-    const buttonProjects = document.querySelectorAll('.buttonprojet');
 
-    links.forEach(link => {
-        link.addEventListener('click', function (event) {
-            event.preventDefault();
-            noscroll.classList.add('noscroll');
-
-            // Show the section targeted by the link's href
-            const targetSection = document.querySelector(this.getAttribute('href'));
-            if (targetSection) {
-                targetSection.classList.remove('visible');
-            }
-        });
-    });
-
-    buttonProjects.forEach(button => {
-        button.addEventListener('click', function () {
-            links.forEach(link => {
-                const targetSection = document.querySelector(link.getAttribute('href'));
-                if (targetSection) {
-                    targetSection.classList.add('visible');
-                }
-            });
-            noscroll.classList.remove('noscroll');
-        });
-    });
-});
-
-// script.js
 document.addEventListener('DOMContentLoaded', () => {
     const taquin = document.getElementById('taquin');
     const chronoElement = document.getElementById('chrono');
     const completionMessage = document.getElementById('completionMessage');
-    const imagePath = '../assets/images/hwtaquin.png';  // Chemin de l'image que vous avez fournie
+    const imagePath = '../assets/images/dptaquin.png';
     const gridSize = 4;
     const pieces = [];
     let emptyPiece = { row: gridSize - 1, col: gridSize - 1 };
@@ -143,7 +127,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Fonction pour mélanger un tableau
     function shuffle(array) {
         for (let i = array.length - 1; i > 0; i--) {
             const j = Math.floor(Math.random() * (i + 1));
@@ -151,7 +134,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Initialisation des pièces
     for (let row = 0; row < gridSize; row++) {
         for (let col = 0; col < gridSize; col++) {
             if (row === emptyPiece.row && col === emptyPiece.col) continue;
@@ -168,7 +150,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Mélange des pièces
     shuffle(pieces);
     pieces.forEach((piece, index) => {
         const row = Math.floor(index / gridSize);
@@ -186,12 +167,12 @@ document.addEventListener('DOMContentLoaded', () => {
         if (isAdjacent(row, col, emptyPiece.row, emptyPiece.col)) {
             startChrono();
             console.log(`Moving piece at (${row}, ${col}) to empty position at (${emptyPiece.row}, ${emptyPiece.col})`);
-            // Échange les positions de la pièce cliquée et de la case vide
+
             piece.style.gridRowStart = emptyPiece.row + 1;
             piece.style.gridColumnStart = emptyPiece.col + 1;
             piece.dataset.row = emptyPiece.row;
             piece.dataset.col = emptyPiece.col;
-            // Met à jour la position de la case vide
+
             emptyPiece.row = row;
             emptyPiece.col = col;
             console.log(`Moved piece to (${emptyPiece.row}, ${emptyPiece.col})`);
@@ -209,3 +190,73 @@ document.addEventListener('DOMContentLoaded', () => {
         return (Math.abs(row1 - row2) + Math.abs(col1 - col2)) === 1;
     }
 });
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    const noscroll = document.querySelector('body');
+    const links = document.querySelectorAll('.projetlien');
+    const buttonProjects = document.querySelectorAll('.buttonprojet');
+    let currentProjectIndex = 0;
+    const projects = document.querySelectorAll('.presentationprojet');
+
+    function showProject(index) {
+        projects.forEach((project, i) => {
+            project.classList.toggle('hidden', i !== index);
+            if (i === index) {
+                project.style.display = 'block';
+            } else {
+                project.style.display = 'none';
+            }
+        });
+        noscroll.classList.add('noscroll');
+    }
+
+    function hideProject() {
+        projects.forEach(project => {
+            project.classList.add('hidden');
+            project.style.display = 'none';
+        });
+        noscroll.classList.remove('noscroll');
+    }
+
+    function nextProject() {
+        currentProjectIndex = (currentProjectIndex + 1) % projects.length;
+        showProject(currentProjectIndex);
+    }
+
+    function prevProject() {
+        currentProjectIndex = (currentProjectIndex - 1 + projects.length) % projects.length;
+        showProject(currentProjectIndex);
+    }
+
+    links.forEach(link => {
+        link.addEventListener('click', function (event) {
+            event.preventDefault();
+            noscroll.classList.add('noscroll');
+
+
+            const targetSection = document.querySelector(this.getAttribute('href'));
+            if (targetSection) {
+                targetSection.classList.remove('hidden');
+                targetSection.style.display = 'block';
+                currentProjectIndex = Array.from(projects).indexOf(targetSection);
+            }
+        });
+    });
+
+    buttonProjects.forEach(button => {
+        button.addEventListener('click', hideProject);
+    });
+
+    document.querySelectorAll('.next-project').forEach(button => {
+        button.addEventListener('click', nextProject);
+    });
+
+    document.querySelectorAll('.prev-project').forEach(button => {
+        button.addEventListener('click', prevProject);
+    });
+
+    hideProject();
+});
+
+
