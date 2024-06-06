@@ -83,7 +83,7 @@
 
         color: white;
 
-        font-size: 18px;
+        font-size: 22px;
         transition: 0.3s ease;
         border: none;
         background-color: transparent;
@@ -97,4 +97,24 @@
     .next-project:hover {
         transform: scale(1.3);
     }
+
+
+    // #cursor {
+    //     width: 10px;
+    //     /* Ajustez la largeur selon vos besoins */
+    //     animation: blink 0.7s infinite;
+    // }
+
+    // @keyframes blink {
+
+    //     0%,
+    //     50% {
+    //         opacity: 1;
+    //     }
+
+    //     51%,
+    //     100% {
+    //         opacity: 0;
+    //     }
+    // }
 }

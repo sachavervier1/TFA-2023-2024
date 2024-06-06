@@ -40,19 +40,20 @@
 
     .nomprenom {
         position: absolute;
-        transform: rotate(-90deg);
         -webkit-text-stroke: 1px #93835e;
         color: transparent;
-        top: 38%;
-        right: -29%;
+        bottom: 0%;
+        left: 90%;
 
         font-family: "muli", sans-serif;
         font-weight: 900;
         font-style: normal;
-
         font-size: 115px;
         line-height: 195px;
         opacity: 0.5;
+        writing-mode: vertical-lr;
+        text-orientation: mixed;
+        transform: rotate(180deg);
 
     }
 
@@ -63,7 +64,13 @@
         svg {
             position: absolute;
             bottom: 7%;
+
+            &:hover {
+                transform: translateY(2px);
+            }
         }
+
+
     }
 
     .spacebar {
@@ -73,7 +80,197 @@
         top: 48%;
     }
 
+}
+
+@media(min-width:1360px) {
+
+    .spacebar {
+        left: 46.7%;
+
+    }
+
+}
+
+@media(min-width:1440px) {
+
+    .nomprenom {
+        left: 91%;
+
+    }
+
+    .spacebar {
+        left: 45%;
+
+    }
+
+    .backgroundlight {
+        left: 760px;
+    }
+
+}
+
+@media(min-width:1520px) {
+
+    .spacebar {
+        left: 42.7%;
+
+    }
+
+}
+
+@media(min-width:1600px) {
+
+    .nomprenom {
+        left: 92%;
+
+    }
+
+    .spacebar {
+        left: 41%;
+
+    }
+
+    .presentation {
+        max-width: 500px;
+        margin-left: 70px;
+
+        p {
+            font-size: 20px;
+        }
+
+    }
+
+    .backgroundlight {
+        left: 920px;
+    }
+
+}
+
+@media(min-width:1680px) {
+
+    .spacebar {
+        left: 39%;
+
+    }
+
+}
+
+@media(min-width:1760px) {
+
+    .nomprenom {
+        left: 93%;
+
+    }
+
+    .spacebar {
+        left: 37.3%;
+
+    }
+
+    .presentation {
+        margin-left: 100px;
+    }
+
+    .backgroundlight {
+        left: 1080px;
+    }
+
+}
+
+@media(min-width:1840px) {
+
+    .spacebar {
+        left: 35.5%;
+
+    }
+
+}
+
+@media(min-width:1920px) {
 
 
+    .spacebar {
+        left: 34.3%;
+
+    }
+
+    .presentation {
+        max-width: 550px;
+
+        p {
+            font-size: 22px;
+        }
+
+    }
+
+    .backgroundlight {
+        left: 1240px;
+    }
+
+}
+
+@media(min-height:870px) {
+
+    .nomprenom {
+        font-size: 125px;
+
+    }
+
+    .spacebar {
+        top: 43%;
+    }
+
+    .section__header {
+        margin-top: 156px;
+    }
+
+
+}
+
+@media(min-height:940px) {
+
+    .nomprenom {
+        font-size: 135px;
+
+    }
+
+    .spacebar {
+        top: 39%;
+    }
+
+    .section__header {
+        margin-top: 190px;
+    }
+
+}
+
+
+@media(min-height:1010px) {
+
+    .nomprenom {
+        font-size: 145px;
+
+    }
+
+    .spacebar {
+        top: 37%;
+    }
+
+}
+
+@media(min-height:1080px) {
+
+    .nomprenom {
+        font-size: 155px;
+
+    }
+
+    .spacebar {
+        top: 34%;
+    }
+
+    .section__header {
+        margin-top: 220px;
+    }
 
 }

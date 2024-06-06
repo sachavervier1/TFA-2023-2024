@@ -8,9 +8,12 @@
 @import 'components/sectionapropos';
 @import 'components/presentationprojets';
 @import 'components/taquinjeu';
+@import 'components/footer';
 
 html {
     scroll-behavior: smooth;
+
+
 }
 
 
@@ -19,7 +22,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: #171717;
-    font-size: 18px;
+    font-size: 16px;
     color: white;
     line-height: 29px;
     font-family: "Plus Jakarta Sans", sans-serif;
@@ -34,37 +37,6 @@ body {
     overflow: hidden;
 }
 
-h1 {
-    font-weight: 600;
-    font-size: 220px;
-    line-height: 200px;
-    border-left: 1px solid #ffa800;
-    margin: 20px 0px 20px 35px;
-
-    padding: 50px;
-
-
-}
-
-h2 {
-    font-weight: 550;
-    font-style: italic;
-    font-size: 220px;
-    display: flex;
-    align-items: center;
-}
-
-h3 {
-    font-size: 170px;
-    font-weight: 600;
-    margin: 0;
-    line-height: 170px;
-    margin-bottom: 60px;
-
-    span {
-        color: #ffa800;
-    }
-}
 
 p {
     padding: 0;
@@ -75,4 +47,77 @@ p {
     font-weight: 800;
 }
 
-@media(min-width:1280px) {}
+@media(min-width:1280px) {
+
+
+    body {
+        font-size: 18px;
+    }
+
+    h1 {
+        font-weight: 600;
+        font-size: 220px;
+        line-height: 200px;
+        border-left: 1px solid #ffa800;
+        margin: 20px 0px 25px 35px;
+
+        padding: 50px;
+
+
+    }
+
+    h2 {
+        font-weight: 550;
+        font-style: italic;
+        font-size: 220px;
+        display: flex;
+        align-items: center;
+    }
+
+    h3 {
+        font-size: 170px;
+        font-weight: 600;
+        margin: 0;
+        line-height: 170px;
+        margin-bottom: 60px;
+
+        span {
+            color: #ffa800;
+        }
+    }
+}
+
+@media(min-width:1440px) {
+    h1 {
+        margin: 20px 0px 25px 45px;
+    }
+
+
+}
+
+
+
+@media(min-width:1600px) {
+
+    h1 {
+        margin: 20px 0px 25px 55px;
+        font-size: 255px;
+        line-height: 235px;
+    }
+}
+
+@media(min-width:1760px) {
+
+    h1 {
+        margin: 20px 0px 25px 100px;
+        padding-left: 100px;
+    }
+}
+
+@media(min-width:1920px) {
+
+    h1 {
+        font-size: 290px;
+        line-height: 270px;
+    }
+}

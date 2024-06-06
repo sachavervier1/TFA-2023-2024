@@ -1,0 +1,15 @@
+.footer {
+    border-top: solid 1px #ffa800;
+
+    &__liste {
+        display: flex;
+        justify-content: space-between;
+        padding: 0px 35px;
+    }
+
+    a {
+        &:hover {
+            color: #ffa800;
+        }
+    }
+}

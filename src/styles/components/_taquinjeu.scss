@@ -1,11 +1,26 @@
+.bodytaquin {
+    height: 100vh;
+    overflow: hidden;
+}
+
+.taquinmp {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 80vh;
+
+    img {
+        width: 403px;
+        height: 403px;
+    }
+}
+
 .taquinjeu {
 
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
     margin: 0;
-    overflow: hidden;
     flex-direction: column;
 }
 
@@ -21,20 +36,22 @@
     height: 100px;
     background-size: 400px 400px;
     cursor: pointer;
-    border: 1px solid #ccc;
+    border: 1px solid #171717;
 }
 
 #chrono {
     margin-top: 20px;
     font-size: 24px;
     font-weight: bold;
+    text-align: center;
+    margin-top: 105px;
 }
 
 #completionMessage {
     margin-top: 20px;
     font-size: 24px;
     font-weight: bold;
-    color: green;
+    color: white;
 }
 
 // .hidden {

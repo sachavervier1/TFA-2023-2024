@@ -1,35 +1,11 @@
 @media(min-width:1280px) {
+
+
+
     .sectionapropos {
-        margin-top: 150vh;
-        height: 100vh;
-        display: flex;
-        justify-content: center;
-        overflow-x: none;
-        position: relative;
-    }
 
+        margin-top: 200vh;
 
-    .border3 {
-        border-top: 1px solid #ffa800;
-        width: 800px;
-        position: absolute;
-        top: 30%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-
-    }
-
-    .border4 {
-        border-top: 1px solid #ffa800;
-        width: 800px;
-        position: absolute;
-        top: 73%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-
-    }
-
-    .conclusionapropos {
         p {
             margin: 35px;
             max-width: 600px;
@@ -50,4 +26,26 @@
         }
     }
 
+}
+
+@media(min-width:1400px) {
+    .sectionapropos {
+
+        p,
+        a {
+            margin-left: 46px;
+        }
+
+
+    }
+}
+
+@media(min-width:1600px) {
+    .sectionapropos {
+
+        p,
+        a {
+            margin-left: 56px;
+        }
+    }
 }
