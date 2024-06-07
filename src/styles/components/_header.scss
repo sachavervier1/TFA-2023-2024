@@ -1,3 +1,33 @@
+header {
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.backgroundlight {
+    display: none;
+}
+
+.nomprenom {
+    display: none;
+}
+
+.presentation {
+    p {
+        margin-bottom: 29px;
+    }
+}
+
+.buttonarrow {
+    display: flex;
+    justify-content: center;
+
+    svg {
+        position: absolute;
+        bottom: 3%;
+    }
+}
+
 @media(min-width:1280px) {
     header {
         height: 100vh;
@@ -39,6 +69,7 @@
     }
 
     .nomprenom {
+        display: block;
         position: absolute;
         -webkit-text-stroke: 1px #93835e;
         color: transparent;
@@ -73,23 +104,10 @@
 
     }
 
-    .spacebar {
-        color: #ffa800;
-        position: absolute;
-        left: 49.7%;
-        top: 48%;
-    }
 
 }
 
-@media(min-width:1360px) {
 
-    .spacebar {
-        left: 46.7%;
-
-    }
-
-}
 
 @media(min-width:1440px) {
 
@@ -98,10 +116,6 @@
 
     }
 
-    .spacebar {
-        left: 45%;
-
-    }
 
     .backgroundlight {
         left: 760px;
@@ -109,24 +123,11 @@
 
 }
 
-@media(min-width:1520px) {
-
-    .spacebar {
-        left: 42.7%;
-
-    }
-
-}
 
 @media(min-width:1600px) {
 
     .nomprenom {
         left: 92%;
-
-    }
-
-    .spacebar {
-        left: 41%;
 
     }
 
@@ -146,24 +147,11 @@
 
 }
 
-@media(min-width:1680px) {
-
-    .spacebar {
-        left: 39%;
-
-    }
-
-}
 
 @media(min-width:1760px) {
 
     .nomprenom {
         left: 93%;
-
-    }
-
-    .spacebar {
-        left: 37.3%;
 
     }
 
@@ -177,22 +165,10 @@
 
 }
 
-@media(min-width:1840px) {
-
-    .spacebar {
-        left: 35.5%;
-
-    }
-
-}
 
 @media(min-width:1920px) {
 
 
-    .spacebar {
-        left: 34.3%;
-
-    }
 
     .presentation {
         max-width: 550px;
@@ -209,68 +185,58 @@
 
 }
 
-@media(min-height:870px) {
+@media(min-width:1280px) {
 
-    .nomprenom {
-        font-size: 125px;
+    @media(min-height:870px) {
+
+        .nomprenom {
+            font-size: 125px;
+
+        }
+
+
+        .section__header {
+            margin-top: 156px;
+        }
+
 
     }
 
-    .spacebar {
-        top: 43%;
-    }
+    @media(min-height:940px) {
 
-    .section__header {
-        margin-top: 156px;
-    }
+        .nomprenom {
+            font-size: 135px;
 
+        }
 
-}
-
-@media(min-height:940px) {
-
-    .nomprenom {
-        font-size: 135px;
+        .section__header {
+            margin-top: 190px;
+        }
 
     }
 
-    .spacebar {
-        top: 39%;
-    }
 
-    .section__header {
-        margin-top: 190px;
-    }
+    @media(min-height:1010px) {
 
-}
+        .nomprenom {
+            font-size: 145px;
 
-
-@media(min-height:1010px) {
-
-    .nomprenom {
-        font-size: 145px;
+        }
 
     }
 
-    .spacebar {
-        top: 37%;
-    }
+    @media(min-height:1080px) {
 
-}
+        .nomprenom {
+            font-size: 155px;
 
-@media(min-height:1080px) {
+        }
 
-    .nomprenom {
-        font-size: 155px;
 
-    }
+        .section__header {
+            margin-top: 220px;
+        }
 
-    .spacebar {
-        top: 34%;
-    }
-
-    .section__header {
-        margin-top: 220px;
     }
 
 }

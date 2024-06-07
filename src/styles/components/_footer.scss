@@ -3,13 +3,45 @@
 
     &__liste {
         display: flex;
+        flex-direction: column;
         justify-content: space-between;
-        padding: 0px 35px;
+        padding: 0;
+        list-style: none;
     }
+}
 
-    a {
-        &:hover {
-            color: #ffa800;
+@media(min-width:1280px) {
+
+    .footer {
+
+        &__liste {
+            flex-direction: row;
+            padding: 0px 35px;
+            margin: 35px 0px;
         }
+
+        a {
+            &:hover {
+                color: #ffa800;
+            }
+        }
+    }
+}
+
+@media(min-width:1440px) {
+    .footer__liste {
+        padding: 0px 46px;
+    }
+}
+
+@media(min-width:1600px) {
+    .footer__liste {
+        padding: 0px 56px;
+    }
+}
+
+@media(min-width:1760px) {
+    .footer__liste {
+        padding: 0px 96px;
     }
 }

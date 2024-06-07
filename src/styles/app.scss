@@ -20,9 +20,11 @@ html {
 body {
     overflow-x: hidden;
     margin: 0;
+    margin-left: 18px;
+    margin-right: 18px;
     padding: 0;
     background-color: #171717;
-    font-size: 16px;
+    font-size: 18px;
     color: white;
     line-height: 29px;
     font-family: "Plus Jakarta Sans", sans-serif;
@@ -31,6 +33,38 @@ body {
     font-style: normal;
 
 
+
+}
+
+h1 {
+    font-size: 118px;
+    line-height: 118px;
+    margin: 0;
+    margin-top: 116px;
+    margin-bottom: 58px;
+    border-left: 1px solid #ffa800;
+    padding: 0px 0px 10px 18px;
+}
+
+h2 {
+    font-weight: 550;
+    font-style: italic;
+    font-size: 73.75px;
+    line-height: 74px;
+    padding-top: 100px;
+    margin: 0;
+}
+
+h3 {
+    font-size: 46px;
+    font-weight: 600;
+    margin: 0;
+    line-height: 46px;
+    margin-bottom: 0px;
+
+    span {
+        color: #ffa800;
+    }
 }
 
 .noscroll {
@@ -52,6 +86,8 @@ p {
 
     body {
         font-size: 18px;
+        line-height: 35px;
+        margin: 0;
     }
 
     h1 {
@@ -91,8 +127,6 @@ p {
     h1 {
         margin: 20px 0px 25px 45px;
     }
-
-
 }
 
 
@@ -104,6 +138,11 @@ p {
         font-size: 255px;
         line-height: 235px;
     }
+
+    h3 {
+        font-size: 190px;
+    }
+
 }
 
 @media(min-width:1760px) {
@@ -119,5 +158,9 @@ p {
     h1 {
         font-size: 290px;
         line-height: 270px;
+    }
+
+    h3 {
+        font-size: 210px;
     }
 }

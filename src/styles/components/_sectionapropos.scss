@@ -1,9 +1,28 @@
+.sectionapropos {
+
+    margin-top: 150vh;
+    padding-top: 100px;
+
+    p {
+        margin-bottom: 29px;
+    }
+
+    a {
+        display: block;
+        border: 1px solid white;
+        padding: 10px;
+        width: 100px;
+        margin-bottom: 29px;
+        text-align: center;
+    }
+}
+
 @media(min-width:1280px) {
 
 
 
     .sectionapropos {
-
+        padding-top: 0;
         margin-top: 200vh;
 
         p {
@@ -28,7 +47,7 @@
 
 }
 
-@media(min-width:1400px) {
+@media(min-width:1440px) {
     .sectionapropos {
 
         p,
@@ -46,6 +65,59 @@
         p,
         a {
             margin-left: 56px;
+            font-size: 20px;
+            max-width: 655px;
+        }
+    }
+}
+
+@media(min-width:1760px) {
+    .sectionapropos {
+
+        p,
+        a {
+            margin-left: 96px;
+        }
+    }
+}
+
+@media(min-width:1920px) {
+    .sectionapropos {
+
+        p {
+            font-size: 22px;
+            max-width: 700px;
+        }
+    }
+}
+
+@media(min-height:870px) {
+    .sectionapropos {
+
+        a {
+            margin-bottom: 105px;
+
+        }
+    }
+}
+
+@media(min-height:1010px) {
+    .sectionapropos {
+
+        a {
+            margin-bottom: 140px;
+
+        }
+    }
+}
+
+
+@media(min-height:1080px) {
+    .sectionapropos {
+
+        a {
+            margin-top: 105px;
+
         }
     }
 }

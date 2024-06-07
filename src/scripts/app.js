@@ -158,24 +158,6 @@ if (window.location.pathname === '/' || window.location.pathname.endsWith('/inde
     });
 
 
-    // document.addEventListener('DOMContentLoaded', function () {
-    //     const title = document.getElementById('titleprojet');
-    //     const cursor = document.getElementById('cursor');
-    //     const text = "TFA 2023 ";
-    //     let index = 0;
-
-    //     function type() {
-    //         if (index < text.length) {
-    //             title.innerHTML = text.substring(0, index + 1) + '<span id="cursor">_</span>';
-    //             index++;
-    //             setTimeout(type, 1000); // Ajustez la vitesse de dactylographie ici
-    //         }
-    //     }
-
-    //     type();
-    // });
-
-
 }
 
 if (window.location.pathname === '/' || window.location.pathname.endsWith('/taquin.html')) {
