@@ -98,7 +98,7 @@
     }
 }
 
-@media(max-width:1279px) {
+@media (min-width:750px) and (max-width:1279px) {
 
     nav {
         position: fixed;
