@@ -15,6 +15,10 @@
     }
 }
 
+#projetSelect {
+    margin-top: -35px;
+}
+
 .taquinjeu {
 
     display: flex;
@@ -29,6 +33,7 @@
     grid-template-columns: repeat(4, 100px);
     grid-template-rows: repeat(4, 100px);
     gap: 1px;
+    margin: 35px;
 }
 
 .piece {
