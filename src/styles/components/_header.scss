@@ -1,5 +1,5 @@
 header {
-    height: 100vh;
+    min-height: 100vh;
     position: relative;
     overflow: hidden;
 }
@@ -23,6 +23,50 @@ header {
 }
 
 @media(min-width:750px) {
+    header {
+        min-height: 100vh;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .titre {
+        display: flex;
+        flex-direction: column;
+
+    }
+
+
+    .presentation {
+        max-width: 500px;
+        margin-left: 35px;
+
+        p {
+            margin-bottom: 35px;
+        }
+    }
+
+
+
+
+}
+
+@media(min-width:1000px) {
+
+
+    .section__header {
+        display: flex;
+        align-items: center;
+        margin-top: 121px;
+    }
+
+
+
+
+}
+
+
+
+@media(min-width:1280px) {
     header {
         height: 100vh;
         position: relative;

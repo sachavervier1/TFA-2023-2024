@@ -190,7 +190,6 @@ if (window.location.pathname === '/projets/tfa/taquin.html') {
                     const piece = document.createElement('div');
                     piece.classList.add('piece');
                     piece.style.backgroundImage = `url(${imagePath})`;
-                    piece.style.backgroundPosition = `-${col * 100}px -${row * 100}px`;
                     piece.dataset.row = row;
                     piece.dataset.col = col;
                     piece.addEventListener('click', () => movePiece(piece));
@@ -199,6 +198,7 @@ if (window.location.pathname === '/projets/tfa/taquin.html') {
                 }
             }
 
+            updatePieceStyles();
             shuffle(pieces);
             pieces.forEach((piece, index) => {
                 const row = Math.floor(index / gridSize);
@@ -207,6 +207,20 @@ if (window.location.pathname === '/projets/tfa/taquin.html') {
                 piece.style.gridColumnStart = col + 1;
                 piece.dataset.row = row;
                 piece.dataset.col = col;
+            });
+        }
+
+        function updatePieceStyles() {
+            const taquinWidth = taquin.clientWidth;
+            const pieceSize = taquinWidth / gridSize;
+
+            pieces.forEach(piece => {
+                const row = parseInt(piece.dataset.row);
+                const col = parseInt(piece.dataset.col);
+                piece.style.width = `${pieceSize}px`;
+                piece.style.height = `${pieceSize}px`;
+                piece.style.backgroundSize = `${pieceSize * gridSize}px ${pieceSize * gridSize}px`;
+                piece.style.backgroundPosition = `-${col * pieceSize}px -${row * pieceSize}px`;
             });
         }
 
@@ -237,8 +251,8 @@ if (window.location.pathname === '/projets/tfa/taquin.html') {
 
         function checkIfCompleted() {
             return pieces.every(piece => {
-                const correctRow = parseInt(piece.style.backgroundPosition.split(' ')[1]) / -100;
-                const correctCol = parseInt(piece.style.backgroundPosition.split(' ')[0]) / -100;
+                const correctRow = parseInt(piece.style.backgroundPosition.split(' ')[1]) / -parseInt(piece.style.height);
+                const correctCol = parseInt(piece.style.backgroundPosition.split(' ')[0]) / -parseInt(piece.style.width);
                 const currentRow = parseInt(piece.dataset.row);
                 const currentCol = parseInt(piece.dataset.col);
                 return correctRow === currentRow && correctCol === currentCol;
@@ -277,9 +291,11 @@ if (window.location.pathname === '/projets/tfa/taquin.html') {
             return (Math.abs(row1 - row2) + Math.abs(col1 - col2)) === 1;
         }
 
-        // Charger le premier projet par défaut
         chargerProjet(projetSelect.value);
+
+        window.addEventListener('resize', updatePieceStyles);
     });
+
 
 
 }

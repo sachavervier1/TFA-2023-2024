@@ -1,6 +1,6 @@
 .bodytaquin {
     height: 100vh;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 .taquinmp {
@@ -8,19 +8,19 @@
     justify-content: space-around;
     align-items: center;
     height: 80vh;
+    flex-direction: column;
 
     img {
-        width: 403px;
-        height: 403px;
+        width: 324px;
+        height: 324px;
     }
 }
 
 #projetSelect {
-    margin-top: -35px;
+    margin-top: 18px;
 }
 
 .taquinjeu {
-
     display: flex;
     justify-content: center;
     align-items: center;
@@ -30,16 +30,22 @@
 
 #taquin {
     display: grid;
-    grid-template-columns: repeat(4, 100px);
-    grid-template-rows: repeat(4, 100px);
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
     gap: 1px;
-    margin: 35px;
+    width: 90vw;
+    max-width: 400px;
+    height: auto;
+    margin: 18px;
 }
 
 .piece {
-    width: 100px;
-    height: 100px;
-    background-size: 400px 400px;
+    width: 100%;
+    height: 0;
+    padding-bottom: 100%;
+    /* Assure un ratio 1:1 */
+    background-size: 400% 400%;
+    /* Ajuste en fonction de la taille de la grille */
     cursor: pointer;
     border: 1px solid #171717;
 }
@@ -49,7 +55,6 @@
     font-size: 24px;
     font-weight: bold;
     text-align: center;
-    margin-top: 105px;
 }
 
 #completionMessage {
@@ -61,4 +66,75 @@
 
 .hidden {
     display: none;
+}
+
+
+
+
+@media(min-width:1280px) {
+    .bodytaquin {
+        height: 100vh;
+        overflow: hidden;
+    }
+
+    .taquinmp {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        height: 80vh;
+        flex-direction: row;
+
+        img {
+            width: 403px;
+            height: 403px;
+        }
+    }
+
+    #projetSelect {
+        margin-top: -35px;
+    }
+
+    .taquinjeu {
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        flex-direction: column;
+    }
+
+    #taquin {
+        display: grid;
+        grid-template-columns: repeat(4, 100px);
+        grid-template-rows: repeat(4, 100px);
+        gap: 1px;
+        margin: 35px;
+    }
+
+    .piece {
+        width: 100px;
+        height: 100px;
+        background-size: 400px 400px;
+        cursor: pointer;
+        border: 1px solid #171717;
+    }
+
+    #chrono {
+        margin-top: 20px;
+        font-size: 24px;
+        font-weight: bold;
+        text-align: center;
+        margin-top: 105px;
+    }
+
+    #completionMessage {
+        margin-top: 20px;
+        font-size: 24px;
+        font-weight: bold;
+        color: white;
+    }
+
+    .hidden {
+        display: none;
+    }
 }
