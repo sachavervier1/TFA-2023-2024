@@ -5,7 +5,7 @@ import ScrollTrigger from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 
-if (window.location.pathname === '/') {
+if (window.location.pathname === '/projets/tfa/') {
 
     gsap.to('.pintrue, .border1, .border2', {
         scrollTrigger: {
