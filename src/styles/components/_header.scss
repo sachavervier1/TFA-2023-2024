@@ -19,13 +19,7 @@ header {
 }
 
 .buttonarrow {
-    display: flex;
-    justify-content: center;
-
-    svg {
-        position: absolute;
-        bottom: 3%;
-    }
+    display: none;
 }
 
 @media(min-width:1280px) {
