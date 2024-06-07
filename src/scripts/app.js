@@ -161,106 +161,125 @@ if (window.location.pathname === '/projets/tfa/') {
 }
 
 
-document.addEventListener('DOMContentLoaded', function () {
-    const taquin = document.getElementById('taquin');
-    const chronoElement = document.getElementById('chrono');
-    const completionMessage = document.getElementById('completionMessage');
-    const imagePath = '../tfa/assets/images/dptaquin.png';
-    const gridSize = 4;
-    const pieces = [];
-    let emptyPiece = { row: gridSize - 1, col: gridSize - 1 };
-    let startTime = null;
-    let intervalId = null;
-    let isGameStarted = false;
+if (window.location.pathname === '/projets/tfa/taquin.html') {
 
+    document.addEventListener('DOMContentLoaded', function () {
+        const taquin = document.getElementById('taquin');
+        const chronoElement = document.getElementById('chrono');
+        const completionMessage = document.getElementById('completionMessage');
+        const referenceImage = document.getElementById('referenceImage');
+        const projetSelect = document.getElementById('projetSelect');
+        const imagePathBase = '../tfa/assets/images/';
+        const gridSize = 4;
+        const pieces = [];
+        let emptyPiece = { row: gridSize - 1, col: gridSize - 1 };
+        let startTime = null;
+        let intervalId = null;
+        let isGameStarted = false;
 
-    function startChrono() {
-        if (!isGameStarted) {
-            isGameStarted = true;
-            startTime = new Date();
-            intervalId = setInterval(updateChrono, 1000);
+        function chargerProjet(nomProjet) {
+            const imagePath = imagePathBase + nomProjet + '.png';
+            referenceImage.src = imagePath;
+            pieces.forEach(piece => piece.remove());
+            pieces.length = 0;
+
+            for (let row = 0; row < gridSize; row++) {
+                for (let col = 0; col < gridSize; col++) {
+                    if (row === emptyPiece.row && col === emptyPiece.col) continue;
+
+                    const piece = document.createElement('div');
+                    piece.classList.add('piece');
+                    piece.style.backgroundImage = `url(${imagePath})`;
+                    piece.style.backgroundPosition = `-${col * 100}px -${row * 100}px`;
+                    piece.dataset.row = row;
+                    piece.dataset.col = col;
+                    piece.addEventListener('click', () => movePiece(piece));
+                    taquin.appendChild(piece);
+                    pieces.push(piece);
+                }
+            }
+
+            shuffle(pieces);
+            pieces.forEach((piece, index) => {
+                const row = Math.floor(index / gridSize);
+                const col = index % gridSize;
+                piece.style.gridRowStart = row + 1;
+                piece.style.gridColumnStart = col + 1;
+                piece.dataset.row = row;
+                piece.dataset.col = col;
+            });
         }
-    }
 
-    function updateChrono() {
-        const now = new Date();
-        const elapsedTime = Math.floor((now - startTime) / 1000);
-        const hours = Math.floor(elapsedTime / 3600).toString().padStart(2, '0');
-        const minutes = Math.floor((elapsedTime % 3600) / 60).toString().padStart(2, '0');
-        const seconds = (elapsedTime % 60).toString().padStart(2, '0');
-        chronoElement.textContent = `${hours}:${minutes}:${seconds}`;
-    }
-
-    function stopChrono() {
-        clearInterval(intervalId);
-    }
-
-    function checkIfCompleted() {
-        return pieces.every(piece => {
-            const correctRow = parseInt(piece.style.backgroundPosition.split(' ')[1]) / -100;
-            const correctCol = parseInt(piece.style.backgroundPosition.split(' ')[0]) / -100;
-            const currentRow = parseInt(piece.dataset.row);
-            const currentCol = parseInt(piece.dataset.col);
-            return correctRow === currentRow && correctCol === currentCol;
+        projetSelect.addEventListener('change', function () {
+            chargerProjet(this.value);
         });
-    }
 
-    function shuffle(array) {
-        for (let i = array.length - 1; i > 0; i--) {
-            const j = Math.floor(Math.random() * (i + 1));
-            [array[i], array[j]] = [array[j], array[i]];
-        }
-    }
-
-    for (let row = 0; row < gridSize; row++) {
-        for (let col = 0; col < gridSize; col++) {
-            if (row === emptyPiece.row && col === emptyPiece.col) continue;
-
-            const piece = document.createElement('div');
-            piece.classList.add('piece');
-            piece.style.backgroundImage = `url(${imagePath})`;
-            piece.style.backgroundPosition = `-${col * 100}px -${row * 100}px`;
-            piece.dataset.row = row;
-            piece.dataset.col = col;
-            piece.addEventListener('click', () => movePiece(piece));
-            taquin.appendChild(piece);
-            pieces.push(piece);
-        }
-    }
-
-    shuffle(pieces);
-    pieces.forEach((piece, index) => {
-        const row = Math.floor(index / gridSize);
-        const col = index % gridSize;
-        piece.style.gridRowStart = row + 1;
-        piece.style.gridColumnStart = col + 1;
-        piece.dataset.row = row;
-        piece.dataset.col = col;
-    });
-
-    function movePiece(piece) {
-        const row = parseInt(piece.dataset.row);
-        const col = parseInt(piece.dataset.col);
-        if (isAdjacent(row, col, emptyPiece.row, emptyPiece.col)) {
-            startChrono();
-
-            piece.style.gridRowStart = emptyPiece.row + 1;
-            piece.style.gridColumnStart = emptyPiece.col + 1;
-            piece.dataset.row = emptyPiece.row;
-            piece.dataset.col = emptyPiece.col;
-
-            emptyPiece.row = row;
-            emptyPiece.col = col;
-
-            if (checkIfCompleted()) {
-                stopChrono();
-                completionMessage.classList.remove('hidden');
+        function startChrono() {
+            if (!isGameStarted) {
+                isGameStarted = true;
+                startTime = new Date();
+                intervalId = setInterval(updateChrono, 1000);
             }
         }
-    }
 
-    function isAdjacent(row1, col1, row2, col2) {
-        return (Math.abs(row1 - row2) + Math.abs(col1 - col2)) === 1;
-    }
-});
+        function updateChrono() {
+            const now = new Date();
+            const elapsedTime = Math.floor((now - startTime) / 1000);
+            const hours = Math.floor(elapsedTime / 3600).toString().padStart(2, '0');
+            const minutes = Math.floor((elapsedTime % 3600) / 60).toString().padStart(2, '0');
+            const seconds = (elapsedTime % 60).toString().padStart(2, '0');
+            chronoElement.textContent = `${hours}:${minutes}:${seconds}`;
+        }
 
+        function stopChrono() {
+            clearInterval(intervalId);
+        }
+
+        function checkIfCompleted() {
+            return pieces.every(piece => {
+                const correctRow = parseInt(piece.style.backgroundPosition.split(' ')[1]) / -100;
+                const correctCol = parseInt(piece.style.backgroundPosition.split(' ')[0]) / -100;
+                const currentRow = parseInt(piece.dataset.row);
+                const currentCol = parseInt(piece.dataset.col);
+                return correctRow === currentRow && correctCol === currentCol;
+            });
+        }
+
+        function shuffle(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+        }
+
+        function movePiece(piece) {
+            const row = parseInt(piece.dataset.row);
+            const col = parseInt(piece.dataset.col);
+            if (isAdjacent(row, col, emptyPiece.row, emptyPiece.col)) {
+                startChrono();
+
+                piece.style.gridRowStart = emptyPiece.row + 1;
+                piece.style.gridColumnStart = emptyPiece.col + 1;
+                piece.dataset.row = emptyPiece.row;
+                piece.dataset.col = emptyPiece.col;
+
+                emptyPiece.row = row;
+                emptyPiece.col = col;
+
+                if (checkIfCompleted()) {
+                    stopChrono();
+                    completionMessage.classList.remove('hidden');
+                }
+            }
+        }
+
+        function isAdjacent(row1, col1, row2, col2) {
+            return (Math.abs(row1 - row2) + Math.abs(col1 - col2)) === 1;
+        }
+
+        // Charger le premier projet par défaut
+        chargerProjet(projetSelect.value);
+    });
+
+
+}
