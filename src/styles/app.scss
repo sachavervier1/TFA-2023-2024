@@ -81,7 +81,7 @@ p {
     font-weight: 800;
 }
 
-@media(min-width:1280px) {
+@media(min-width:750px) {
 
 
     body {
@@ -119,6 +119,12 @@ p {
 
         span {
             color: #ffa800;
+        }
+    }
+
+    @media(max-height:800px) {
+        h3 {
+            margin-bottom: 0;
         }
     }
 }

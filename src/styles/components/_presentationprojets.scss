@@ -82,7 +82,7 @@
     right: 0;
 }
 
-@media(min-width:1280px) {
+@media(min-width:750px) {
 
     .presentationprojet {
         height: 100vh;
@@ -257,7 +257,13 @@
 
 }
 
-@media(min-width:1280px) {
+@media(min-width:1750px) {
+
+    @media(min-height:700px) {
+        .buttonprojet {
+            margin-bottom: 19px;
+        }
+    }
 
     @media(min-height:870px) {
         .buttonprojet {

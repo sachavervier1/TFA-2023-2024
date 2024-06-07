@@ -17,7 +17,7 @@
     }
 }
 
-@media(min-width:1280px) {
+@media(min-width:750px) {
 
 
 
@@ -91,33 +91,36 @@
     }
 }
 
-@media(min-height:870px) {
-    .sectionapropos {
 
-        a {
-            margin-bottom: 105px;
+@media(min-width:750px) {
+    @media(min-height:870px) {
+        .sectionapropos {
 
+            a {
+                margin-bottom: 105px;
+
+            }
         }
     }
-}
 
-@media(min-height:1010px) {
-    .sectionapropos {
+    @media(min-height:1010px) {
+        .sectionapropos {
 
-        a {
-            margin-bottom: 140px;
+            a {
+                margin-bottom: 140px;
 
+            }
         }
     }
-}
 
 
-@media(min-height:1080px) {
-    .sectionapropos {
+    @media(min-height:1080px) {
+        .sectionapropos {
 
-        a {
-            margin-top: 105px;
+            a {
+                margin-top: 105px;
 
+            }
         }
     }
 }

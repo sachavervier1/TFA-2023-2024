@@ -22,7 +22,7 @@ header {
     display: none;
 }
 
-@media(min-width:1280px) {
+@media(min-width:750px) {
     header {
         height: 100vh;
         position: relative;
@@ -179,7 +179,17 @@ header {
 
 }
 
-@media(min-width:1280px) {
+@media(min-width:750px) {
+
+    @media(min-height:700px) {
+
+        .nomprenom {
+            font-size: 100px;
+
+        }
+
+
+    }
 
     @media(min-height:870px) {
 
