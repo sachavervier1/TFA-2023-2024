@@ -211,6 +211,10 @@
         display: none;
     }
 
+    .topnav__el a.actifnav {
+        border-bottom: 1px solid #ffa800;
+    }
+
     .topnav__burger {
         display: none;
     }
