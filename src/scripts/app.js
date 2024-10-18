@@ -5,7 +5,7 @@ import ScrollTrigger from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 
-if (window.location.pathname === '/projets/tfa/' || window.location.pathname === '/projets/tfa/index.html') {
+if (window.location.pathname === '/' || window.location.pathname === '/index.html') {
 
     gsap.to('.pintrue, .border1, .border2', {
         scrollTrigger: {
@@ -51,8 +51,70 @@ if (window.location.pathname === '/projets/tfa/' || window.location.pathname ===
     gsap.to('.buttonarrow', {
         opacity: 1,
         y: 75,
-        delay: 2,
+        delay: 3,
 
+    });
+
+
+    function animateWords(element) {
+        const words = element.textContent.split(" ");  // Divise le paragraphe en mots
+        element.innerHTML = "";  // Vide le contenu
+
+        return new Promise((resolve) => {
+            words.forEach((word, index) => {
+                const span = document.createElement("span");
+                span.textContent = word;  // Ajoute chaque mot sans espace HTML
+                element.appendChild(span);  // Ajoute le mot dans le paragraphe
+
+                // Ajoute un espace après chaque mot
+                element.appendChild(document.createTextNode(" "));
+
+                // Ajoute un délai pour l'apparition de chaque mot
+                span.style.animationDelay = `${index * 0.03}s`;
+
+                // Résout la promesse quand tous les mots sont animés
+                if (index === words.length - 1) {
+                    setTimeout(() => resolve(), (index * 0.04) * 1000);
+                }
+            });
+        });
+    }
+
+    // Fonction pour lancer l'animation des paragraphes séquentiellement
+    async function animateParagraphs() {
+        const paragraphs = document.querySelectorAll('.sectionapropos p');
+
+        for (let i = 0; i < paragraphs.length; i++) {
+            paragraphs[i].style.opacity = 1;  // Rendre visible le paragraphe
+            await animateWords(paragraphs[i]);  // Attends que l'animation du paragraphe actuel se termine
+        }
+    }
+
+    // Déclenche l'animation lorsque le premier paragraphe entre dans le viewport
+    // Déclenche l'animation lorsque le premier paragraphe entre dans le viewport
+    function startObserver() {
+        const firstParagraph = document.querySelector('.sectionapropos p');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Lancer l'animation quand le haut du premier paragraphe est à 40% de la vue
+                    animateParagraphs();
+                    observer.disconnect();  // Déconnecter l'observer après l'animation
+                }
+            });
+        }, {
+            threshold: 0,  // 0 signifie que n'importe quelle partie de l'élément peut être visible
+            rootMargin: "0px 0px -40% 0px"  // Activer l'observer lorsque le haut du paragraphe est à 40%
+        });
+
+        observer.observe(firstParagraph);  // Observer le premier paragraphe
+    }
+
+
+    // Lancer l'observer au chargement de la page
+    document.addEventListener("DOMContentLoaded", () => {
+        startObserver();
     });
 
 
@@ -111,7 +173,6 @@ if (window.location.pathname === '/projets/tfa/' || window.location.pathname ===
         var i = 0;
         var timer = setInterval(function () {
             if (i < text.length) {
-
                 element.appendChild(document.createTextNode(text.charAt(i)));
                 i++;
             } else {
@@ -124,8 +185,12 @@ if (window.location.pathname === '/projets/tfa/' || window.location.pathname ===
     var tag = document.querySelector('.nomprenom');
 
 
+    setTimeout(function () {
+        tag.style.visibility = "visible";
+        typeEffect(tag, speed);
+    }, 750);
 
-    typeEffect(tag, speed);
+
 
 
 
@@ -281,7 +346,7 @@ if (window.location.pathname === '/projets/tfa/' || window.location.pathname ===
 }
 
 
-if (window.location.pathname === '/projets/tfa/taquin.html') {
+if (window.location.pathname === '/taquin.html') {
 
     document.addEventListener('DOMContentLoaded', function () {
         const taquin = document.getElementById('taquin');

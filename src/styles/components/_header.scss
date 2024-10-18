@@ -109,6 +109,7 @@ header {
 
     .nomprenom {
         display: block;
+        visibility: hidden;
         position: absolute;
         -webkit-text-stroke: 1px #93835e;
         color: transparent;

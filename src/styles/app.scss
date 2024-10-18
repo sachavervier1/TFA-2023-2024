@@ -44,6 +44,7 @@ h1 {
     margin-bottom: 58px;
     border-left: 1px solid #ffa800;
     padding: 0px 0px 10px 18px;
+
 }
 
 h2 {
@@ -154,11 +155,10 @@ p {
     }
 
     h3 {
-        font-size: 170px;
+        font-size: 120px;
         font-weight: 600;
         margin: 0;
-        line-height: 170px;
-        margin-bottom: 60px;
+        line-height: 100px;
 
         span {
             color: #ffa800;
@@ -176,6 +176,10 @@ p {
     h1 {
         margin: 20px 0px 25px 45px;
     }
+
+    h3 {
+        line-height: 150px;
+    }
 }
 
 
@@ -189,7 +193,7 @@ p {
     }
 
     h3 {
-        font-size: 190px;
+        font-size: 150px;
     }
 
 }
@@ -211,5 +215,6 @@ p {
 
     h3 {
         font-size: 210px;
+        line-height: 190px;
     }
 }
