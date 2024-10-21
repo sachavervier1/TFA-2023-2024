@@ -224,7 +224,7 @@
     }
 
     .presentationprojet {
-        height: 70vh;
+        height: 80vh;
         width: 80vw;
         position: fixed;
         top: 50%;
@@ -319,6 +319,24 @@
 
 }
 
+@media(min-height:750px) {
+    .presentationprojet {
+        height: 75vh;
+    }
+}
+
+@media(min-height:800px) {
+    .presentationprojet {
+        height: 70vh;
+    }
+}
+
+@media(min-height:900px) {
+    .presentationprojet {
+        height: 65vh;
+    }
+}
+
 
 
 @media(min-width:1600px) {
@@ -338,7 +356,7 @@
     }
 }
 
-@media(min-width:1760px) {}
+
 
 @media(min-width:1920px) {
     .flexpresentation {

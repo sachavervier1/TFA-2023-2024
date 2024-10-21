@@ -5,7 +5,8 @@ import ScrollTrigger from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 
-if (window.location.pathname === '/' || window.location.pathname === '/index.html') {
+if (window.location.hostname === 'sacha-vervier.be' &&
+    (window.location.pathname === '/' || window.location.pathname === '/index.html')) {
 
     gsap.to('.pintrue, .border1, .border2', {
         scrollTrigger: {
@@ -345,8 +346,8 @@ if (window.location.pathname === '/' || window.location.pathname === '/index.htm
 
 }
 
-
-if (window.location.pathname === '/taquin.html') {
+if (window.location.hostname === 'sacha-vervier.be' &&
+    (window.location.pathname === '/taquin.html')) {
 
     document.addEventListener('DOMContentLoaded', function () {
         const taquin = document.getElementById('taquin');
@@ -354,7 +355,7 @@ if (window.location.pathname === '/taquin.html') {
         const completionMessage = document.getElementById('completionMessage');
         const referenceImage = document.getElementById('referenceImage');
         const projetSelect = document.getElementById('projetSelect');
-        const imagePathBase = '../tfa/assets/images/';
+        const imagePathBase = '../assets/images/';
         const gridSize = 4;
         const pieces = [];
         let emptyPiece = { row: gridSize - 1, col: gridSize - 1 };
